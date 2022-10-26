@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "macro-css": "^1.0.5",
+    "node-sass": "^7.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0"
+  }
+}

@@ -1,0 +1,81 @@
+@import 'macro-css';
+body{
+  background-image: url("/public/img/1.png");
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+.wrapper{
+  background:#f0d5f5;
+  opacity: 70px;
+  box-shadow: 0px 10px 20px rgba(230, 94, 200, 0);
+  border-radius: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+header{
+  border-bottom: 1px solid #8a8989;
+  
+
+}
+.content {
+  
+    margin: 0;
+  
+}
+.card {
+    border: 1px solid #f7f7f7;
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+ border-radius: 40px;
+ margin-right: 30px;
+ 
+}
+.button{
+  background: #b6e9af;
+  border: 1px solid #8a8989;
+  box-sizing: border-box;
+  border: radius 8px;
+  height: 33px;
+  width: 33px;
+  cursor:pointer;
+}
+
+.things{
+  
+  border: 1px solid #8a8989;
+  box-sizing: border-box;
+  border: radius 8px;
+  height: 120px;
+  width: 120px;
+ 
+    
+}
+
+.greenButton{
+  color: #4f9946;
+  
+    display: inline-block;	
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: none;  
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family:initial;
+    color: #fff;
+    background-color: #5aec97;
+    box-shadow: 0 2px #30c523;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;  
+    vertical-align: top;
+  }
+  
