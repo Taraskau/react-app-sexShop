@@ -65,7 +65,7 @@ function App() {
           </div>
           
         </div>
-        <div className='d-flex flex-wrap padding 10 '>
+        <div className='d-flex flex-wrap padding 15 '>
                  
          {items.filter(item=>item.title.includes(searchValue)).map ((item) => (
            <Card 
