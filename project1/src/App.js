@@ -5,39 +5,77 @@ import Drawer from './components/Drawer';
 import './App.css';
 
 
-const array=[
-  {title: "falas modal 1", price:'1000$', imageUrl:"./img/2.jpeg" },
-  {title: "falas modal 2", price:'1200$', imageUrl:"./img/1.png" },
-  {title: "falas modal 3", price:'1300$', imageUrl:"./img/100.jpg" },
-  {title: "falas modal s", price:'1400$', imageUrl:"./img/1001.png" },
- ];
+
+
+
+
+ 
 
 function App() {
+
+  const [items, setItems]=React.useState([]);
+  const [cartItems, setCartitems]=React.useState([]);
+  const [searchValue, setSearchValue]=React.useState('');
+
+  const [basketOpen, setBasketOpen] = React.useState(false);
+
+   React.useEffect (()=> {
+    fetch ('https://63611a6367d3b7a0a6bdfcd8.mockapi.io/items')
+   .then((res) => {
+    return res.json();
+       })
+       .then ((json) =>{
+        setItems(json);
+       });
+       
+   }, []);
+       
+
+
+       const onAddToCart = (obj) =>{
+        setCartitems(prev =>[...prev, obj]);
+               }
+
+               
+               const removeFromBasket = (obj) => {
+                setCartitems.filter((el)=> el.title !==obj);
+              };
+
+
+              const onСhangeSearchInput = (event)=>{
+                
+                setSearchValue(event.target.value)
+              }
   return (
 
     
     <div>
      
       <div className="wrapper ">
-          <Drawer/>
-      <Header/>
+
+          {basketOpen? <Drawer items={cartItems}  removeFromBasket={removeFromBasket} onClose={()=> setBasketOpen(false)}/>: null}
+
+      <Header onClickBasket={()=> setBasketOpen(true)} />
       <div className='content p-40'>
         <div className='d-flex align-center justify-between mb-40'>
-          <h1>All Things That You Want to buy</h1>
+          <h1>{searchValue ? `search thing : "${searchValue}"`: 'All Things That You Want to buy' }</h1>
           <div className='search-block d-flex'>
-            <img src='./img/search.jpg' width="12" height="12" alt='search'/>
-            <input placeholder='search please...'/>
+            <img onClick={()=>setSearchValue('')} src='./img/search.jpg' width="12" height="12" alt='search'/>
+            <input onChange={onСhangeSearchInput} placeholder='search please...'/>
           </div>
           
         </div>
-        <div className='d-flex'>
+        <div className='d-flex flex-wrap padding 10 '>
                  
-         {array.map ((obj) => (
+         {items.filter(item=>item.title.includes(searchValue)).map ((item) => (
            <Card 
-           title={obj.title} 
-           price={obj.price} 
-           imageUrl={obj.imageUrl}
-           onClick={()=>alert(obj.price+obj.title)}/>
+           key = {item.title}
+           title={item.title} 
+           price={item.price} 
+           imageUrl={item.imageUrl}
+           onClickFavorite={()=>console.log("my")}
+           onClickPlus={(obj)=>onAddToCart(obj)}
+           />
            ))} 
            
           </div>     

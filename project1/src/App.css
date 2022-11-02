@@ -5,6 +5,7 @@ body{
   font-family: 'Inter', sans-serif;
 }
 .wrapper{
+  flex-wrap: wrap;
   background:#f0d5f5;
   opacity: 70px;
   box-shadow: 0px 10px 20px rgba(230, 94, 200, 0);
@@ -12,6 +13,7 @@ body{
   max-width: 1100px;
   margin: 40px auto;
   padding: 30px;
+  
 }
 
 header{
@@ -25,12 +27,14 @@ header{
   
 }
 .card {
+  
     border: 1px solid #f7f7f7;
-  padding: 15px;
+  padding: 30px;
+  margin: 10px;
   width: 200px;
   height: 200px;
  border-radius: 40px;
- margin-right: 30px;
+ margin-right: 10px;
  
  
  }
@@ -41,23 +45,15 @@ header{
  cursor:pointer;
 }
 
-.button{
-  background: #b6e9af;
-  border: 1px solid #8a8989;
-  box-sizing: border-box;
-  border: radius 8px;
-  height: 33px;
-  width: 33px;
-  cursor:pointer;
-}
+
 
 .things{
   
   border: 1px solid #8a8989;
   box-sizing: border-box;
   border: radius 8px;
-  height: 140px;
-  width: 140px;
+  height: 90px;
+  width: 90px;
  
     
 }
@@ -123,3 +119,15 @@ header{
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+.plus{
+  cursor: pointer;
+}
+
+.cartItemImg {
+  border: 1px solid #f7f7f7;
+padding: 10px;
+margin: 10px;
+width: 40px;
+height: 40px;
+border-radius: 30px;
+margin-right: 10px;}
